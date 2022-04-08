@@ -63,7 +63,8 @@ resource "google_pubsub_subscription" "echo" {
 #--------------------------------------------------------------------------------
 
 resource "google_storage_bucket" "bucket" {
-  name = "${var.project_name}-source-bucket1"
+  name      = "${var.project_name}-source-bucket1"
+  location  = "US"
 }
 
 resource "google_storage_bucket_object" "archive" {
@@ -137,6 +138,7 @@ resource "google_bigquery_dataset" "dataset" {
   description = "This is a IOT dataset"
 
   default_table_expiration_ms = 3600000
+  delete_contents_on_destroy      = true
 
   labels = {
     env = "iot-demo"
@@ -148,6 +150,7 @@ resource "google_bigquery_table" "device-data" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
   table_id   = "device_data"
   schema = file("${path.module}/schema.json")
+  deletion_protection = false
 }
 
 

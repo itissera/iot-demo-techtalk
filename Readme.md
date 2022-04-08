@@ -8,7 +8,7 @@ Following components are used
 * Cloud Function
 * Cloud Firestore
 
-![Architecture](https://github.com/vikramshinde12/iot-on-gcp/blob/master/Architecture.png)
+![Architecture](https://github.com/itissera/iot-demo-techtalk/blob/master/Architecture.png)
 
 ### Create Service Account
 1. Create Service Account
@@ -30,6 +30,3 @@ and download key as terraform.json
 4. terraform init
 5. terraform plan
 6. terraform apply
-
-
-The complete detail about this repo is available in the [please refer the blog](https://medium.com/@vikramshinde/iot-in-google-cloud-platform-9708a82c2dea)

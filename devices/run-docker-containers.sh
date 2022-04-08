@@ -5,7 +5,7 @@ REGION=$2
 REGISTRY=$3
 NUM_OF_DEVICES=$4
 
-cd demo-device
+cd iot-lab-device
 counter=1
 while [ $counter -le $NUM_OF_DEVICES ]; do
     docker run -d -e private_key_file=cred/rsa_private.pem -v $PWD:/cred \
